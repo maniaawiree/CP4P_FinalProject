@@ -20,7 +20,8 @@ do {
     } while (strcmp(intString, "q") != 0); //the loop will end if user enters q, strcmp will return 0 if intString and q are identical.
     printf("*** End of Converting Strings to int Demo ***\n\n");
 /* Version 2 */
-// >> insert here
+
+// djbqkjdb
 
 
 /* Version 3 */

@@ -5,7 +5,7 @@
 
 
 
-void fundamentals() {
+void fundamentals(){
 /* Version 1 */
 printf("*** Start of Indexing Strings Demo ***\n");
 	char	buffer1[BUFFER_SIZE];
