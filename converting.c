@@ -2,15 +2,13 @@
 
 void converting() {
 /* Version 1 */
->> insert here
 
 
 /* Version 2 */
->> insert here
+
+// djbqkjdb
 
 
 /* Version 3 */
->> insert here
-
 
 }
