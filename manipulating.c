@@ -2,8 +2,9 @@
 #define _CRT_SECURE_NO_WARNINGS  
 #define BUFFER_SIZE 80   
 void manipulating() {
+    
 /* Version 1 */
-printf("*** start of Concatenating Strings Demo ***\n"); // Prints a message to start the concatenating strings demo.
+    printf("*** start of Concatenating Strings Demo ***\n"); // Prints a message to start the concatenating strings demo.
     // Declares two character arrays with a size of BUFFER_SIZE.
     char string1[BUFFER_SIZE];
     char string2[BUFFER_SIZE];
@@ -33,6 +34,7 @@ printf("*** start of Concatenating Strings Demo ***\n"); // Prints a message to 
 
 /* Version 3 */
 // >> insert here
+
 
 
 }
