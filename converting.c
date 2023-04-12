@@ -1,6 +1,6 @@
+#include "converting.h"
 #define _CRT_SECURE_NO_WARNINGS
 #define BUFFER_SIZE 80 
-#include "converting.h"
 
 
 void converting() {
@@ -22,7 +22,7 @@ do {
     printf("*** End of Converting Strings to int Demo ***\n\n");
 
 /* Version 2 */
-printf("*** Start of Converting Strings to double Demo ***\n");
+    printf("*** Start of Converting Strings to double Demo ***\n");
     char doubleString[BUFFER_SIZE];
     double doubleNumber;
     do{ 

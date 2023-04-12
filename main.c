@@ -1,8 +1,8 @@
-#define _CRT_SECURE_NO_WARNINGS
 #include "fundamentals.h"
 #include "manipulating.h"
 #include "converting.h"
 #include "tokenizing.h"
+#define _CRT_SECURE_NO_WARNINGS
 
 int main(void)
 {
