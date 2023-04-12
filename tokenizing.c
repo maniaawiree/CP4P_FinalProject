@@ -4,11 +4,11 @@
 
 void tokenizing() {
 /* Version 2 */
-    printf("*** Start of Tokenizing Phrases Demo ***\n");
-    char phrases[BUFFER_SIZE]; //declaration of an array of characters
-    char* nextPhrase = NULL; //declaration of a pointer to a character
-    int phrasesCounter; //declaration of an inter variable
-    do { //prompt the user to enter a numeric string until they enter "q" to quit.
+printf("*** Start of Tokenizing Phrases Demo ***\n");
+    char phrases[BUFFER_SIZE]; 
+    char* nextPhrase = NULL; //declaration of a pointer to char variable initialized to 
+    int phrasesCounter;
+    do {
         printf("Type a few phrases seperated by comma(q - to quit):\n");
         fgets(phrases, BUFFER_SIZE, stdin); /*fgets() is used to read the user's input 
                                                     and store it in the phrases array. 
