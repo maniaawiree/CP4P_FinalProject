@@ -4,5 +4,4 @@ void manipulating() {
 /* Version 3 */
 
 
-
 }
