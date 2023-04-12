@@ -1,4 +1,3 @@
-
 #define _CRT_SECURE_NO_WARNINGS  // defines a preprocessor directive to turn off alerts for dangerous functions.
 #define BUFFER_SIZE 80   // Specifies the size of the character arrays that are utilised in the code.
 #include "manipulating.h"  // Includes header file "manipulating.h".
@@ -35,8 +34,4 @@ void manipulating() {
         } while (strcmp(compare1, "q") != 0); // continues to prompt the user to enter strings to compare until they enter "q" to quit
 
         printf("*** End of Comparing Strings Demo ***\n\n"); // prints the end of the program message
-    }
-
-
-
 }
