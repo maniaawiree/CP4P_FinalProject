@@ -1,4 +1,8 @@
-#include "manipulating.h"
+
+#define _CRT_SECURE_NO_WARNINGS  // defines a preprocessor directive to turn off alerts for dangerous functions.
+#define BUFFER_SIZE 80   // Specifies the size of the character arrays that are utilised in the code.
+#include "manipulating.h"  // Includes header file "manipulating.h".
+
 
 void manipulating() {
  printf("*** Start of Comparing Strings Demo ***\n"); // prints the start of the program message
