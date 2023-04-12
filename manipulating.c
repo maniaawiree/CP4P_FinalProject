@@ -1,62 +1,42 @@
-#include "manipulating.h"
+#include "manipulating.h"  // Includes header file "manipulating.h".
+#define BUFFER_SIZE 80 
 #define _CRT_SECURE_NO_WARNINGS  
-#define BUFFER_SIZE 80   
+
+
 void manipulating() {
-    
-/* Version 1 */
-    printf("*** start of Concatenating Strings Demo ***\n"); // Prints a message to start the concatenating strings demo.
-    // Declares two character arrays with a size of BUFFER_SIZE.
-    char string1[BUFFER_SIZE];
-    char string2[BUFFER_SIZE];
-    do {  // Loops until the user inputs "q" as the first string.
-        printf("Type the lst string (g - to quit): \n");  // Requests the first string from the user.
-        fgets(string1, BUFFER_SIZE, stdin);  // Reads the user's input and removes the newline character.
-        string1[strlen(string1) - 1] = '\0';
-        //  if the first string is not "q.", prompts the user to input the second string.
-        if ((strcmp(string1, "q") != 0))
+ printf("*** Start of Comparing Strings Demo ***\n"); // prints the start of the program message
+
+        char compare1[BUFFER_SIZE]; // declares a character array to store the first string to be compared
+        char compare2[BUFFER_SIZE]; // declares a character array to store the second string to be compared
+        int result; // declares an integer variable to store the result of the string comparison
+
+        do //prompts the user to enter a numeric string until they enter "q" to quit and it will be executed at least once.
         {
-            printf("Type the 2nd string: \n");
-            // Reads the user's input for the second string and removes the newline character.
-            fgets(string2, BUFFER_SIZE, stdin);
-            string2[strlen(string2) - 1] = '\0';
-            // Concatenates the two strings and prints the result.
-            strcat(string1, string2);
-            printf("Concatenated string is \'%s\'\n", string1);
-        }
-    } while (strcmp(string1, "q") != 0);
-    // Prints a message to indicate the end of the concatenating strings demo.
-    printf("*** End of†Concatenating strings Demo ***\n\n");
+            printf("Type the Ist string to compare (q - to quit) : \n"); // prompts the user to enter the first string to be compared
+            fgets(compare1, BUFFER_SIZE, stdin); /*fgets() is used to read the user's input 
+                                                    and store it in the compare1 array. 
+                                                    The function reads up to BUFFER_SIZE - 1 characters from the standard input (stdin) 
+                                                    and stores them in compare1. If the user enters more characters than the size of 
+                                                    the array, the extra characters are discarded*/
+            compare1[strlen(compare1) - 1] = '\0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
 
+            if (strcmp(compare1, "q") != 0) // checks if the user entered "q" to quit the program
+            {
+                printf("Type the 2nd string to compare: \n"); // prompts the user to enter the second string to be compared
+                fgets(compare2, BUFFER_SIZE, stdin); /*The fgets() function reads the user's input 
+                                            from the standard input stream and stores it in the phrases array.*/
+                compare2[strlen(compare2) - 1] = '\0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
 
-/* Version 2 */
-// >> insert here
+                result = strcmp(compare1, compare2); // compares the two strings and stores the return value of strcmp in the result variable
 
+                if (result < 0) // if result is less than 0 means the compare1 string is smaller than compare2
+                    printf("\'%s\' string is less than \'%s\'\n", compare1, compare2); //the string in compare1 is smaller than the string in compare2 is printed to the console
+                else if (result == 0) // if result is 0 means compare1 and compare2 strings are equal
+                    printf("\'%s\' string is equal to \'%s\'\n", compare1, compare2); //the string in compare1 is equal to compare2 is printed to the console
+                else //if result is greater than 0, means compare1 string is bigger than compare2 string
+                    printf("\'%s\' string is greater than \'%s\'\n", compare1, compare2); //the string in compare1 is greater than the string in compare2 is printed to the console
+            }
+        } while (strcmp(compare1, "q") != 0); 
 
-/* Version 3 */
-// >> insert here
-
-
-
+        printf("*** End of Comparing Strings Demo ***\n\n"); // prints the end of the program message
 }
-
-
-
-
-// printf("*** Start of Concatenating String Demo ***\n");
-//    char string1[BUFFER_SIZE]; //sets the array size to the value of BUFFER_SIZE
-//    char string2[BUFFER_SIZE]; //sets the array size to the value of BUFFER_SIZE
-//
-//    do{
-//        printf("Type the 1st string (q - to quit):\n");
-//        fgets(string1, BUFFER_SIZE, stdin); //gets and assigns the user input into intString,initializing the size of string1 to BUFFER_SIZE; indicating it is a user input(via keyboard);
-//        //fgets return string1 as [char or int](any number of characters or ints)[\n][\0]
-//        string1[strlen(string1) - 1] = '\0'; //it sets the index number (length of the string1 - 1) from \n to NULL ;unexpected results can be avoided in subsequent concatenation operations
-//        if ((strcmp(string1, "q") != 0)){ //it checks if string1 and q are not identical;strcmp will return 0 if string1 and q are identical.
-//            printf("Type the 2nd string:\n");
-//            fgets(string2, BUFFER_SIZE, stdin); //the input will be stored in string2, buffersize number of elements in string, and stdin indicates it is entered by user(keyboard)
-//            string2[strlen(string2) - 1] = '\0';//it sets the index number (length of the string2 - 1) from \n to NULL ;unexpected results can be avoided in subsequent concatenation operations;
-//            strcat(string1, string2); //it concatenates string 1 and string 2, "string1string2"
-//            printf("Concatenated string is \'%s\'\n", string1); //outputs the concatenation result
-//        }
-//    }while(strcmp(string1, "q") != 0); //the loop will end if user enters q, strcmp will return 0 if string1 and q are identical.
-//    printf("*** End of Concatenating String Demo ***\n\n");
