@@ -1,10 +1,10 @@
+#include "converting.h"
 #define _CRT_SECURE_NO_WARNINGS
 #define BUFFER_SIZE 80 //defining macro 
-#include "converting.h"
 
 void converting() {
 /* Version 2 */
-printf("*** Start of Converting Strings to double Demo ***\n");
+    printf("*** Start of Converting Strings to double Demo ***\n");
     char doubleString[BUFFER_SIZE];
     double doubleNumber;
     do{ //prompts the user to enter a numeric string until they enter "q" to quit.
