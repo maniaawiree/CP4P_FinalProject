@@ -10,7 +10,7 @@ void fundamentals(){
         printf("Type a string (q - to quit):\n"); 
         fgets(buffer2, BUFFER_SIZE, stdin);
         buffer2[strlen(buffer2) - 1] = '0';
-        if (stremp (buffer2, "q") != 0)
+        if (strcmp (buffer2, "q") != 0)
             printf ("The length of \'%s\' is %d characters\n",
                      buffer2, (int)strlen(buffer2));
     } while (strcmp(buffer2, "q") != 0) ;
