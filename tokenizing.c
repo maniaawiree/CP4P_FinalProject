@@ -4,7 +4,7 @@
 
 void tokenizing() {
 /* Version 2 */
-printf("*** Start of Tokenizing Phrases Demo ***\n");
+    printf("*** Start of Tokenizing Phrases Demo ***\n");
     char phrases[BUFFER_SIZE]; //declaration of an array of characters
     char* nextPhrase = NULL; //declaration of a pointer to a character
     int phrasesCounter; //declaration of an inter variable
