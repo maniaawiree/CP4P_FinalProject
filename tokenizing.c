@@ -33,19 +33,19 @@ printf("*** Ends of Tokenizing Words Demo ***\n\n");
 /* Version 2 */
 // >> insert here
 printf("*** Start of Tokenizing Phrases Demo ***\n");
-    char phrases[BUFFER_SIZE];
+    char phrases[BUFFER_SIZE]; 
     char* nextPhrase = NULL;
     int phrasesCounter;
     do {
         printf("Type a few phrases seperated by comma(q - to quit):\n");
-        fgets(phrases, BUFFER_SIZE, stdin);
-        phrases[strlen(phrases) - 1] = '\0';
+        fgets(phrases, BUFFER_SIZE, stdin); 
+        phrases[strlen(phrases) - 1] = '\0'; 
         if ((strcmp(phrases, "q") != 0)) {
-            nextPhrase = strtok(phrases, ",");
-            phrasesCounter = 1;
+            nextPhrase = strtok(phrases, ","); 
+            phrasesCounter = 1; 
             while (nextPhrase) {
                 printf("Phrases #%d is \'%s\'\n", phrasesCounter++, nextPhrase);
-                nextPhrase = strtok(NULL, ",");
+                nextPhrase = strtok(NULL, ","); 
             }
         }
     } while (strcmp(phrases, "q") != 0);
