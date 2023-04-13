@@ -34,18 +34,19 @@ void fundamentals(){
 
 
 /* Version 2 */
-    printf("*** Start of Measuring strings Demo ***\n");
-    char buffer2[BUFFER_SIZE];
-    do { 
-        printf("Type a string (q - to quit):\n"); 
-        fgets(buffer2, BUFFER_SIZE, stdin); 
-        buffer2[strlen(buffer2) - 1] = '0'; 
-        if (strcmp (buffer2, "q") != 0)
-            printf ("The length of \'%s\' is %d characters\n",
-                     buffer2, (int)strlen(buffer2));
-    } while (strcmp(buffer2, "q") != 0) ; 
-    printf ("*** End of Measuring Strinas Demo ***\n\n");
-
+	printf("*** Start of Measuring Strings Demo ***\n");   // Print a message to indicate the start of the program
+ 	char buffer2[BUFFER_SIZE];  // In this program, buffer2 is declared as a character array with a size of BUFFER_SIZE, which is defined as 80 using the #define preprocessor directive. This means that buffer2 can store up to 79 characters plus a null terminator character.The purpose of buffer2 is to temporarily store the user's input when they type a string into the program. 
+  	do{
+    		printf("Type a string (q - to quit):\n");   // Prompt the user to input a string
+    		fgets(buffer2, BUFFER_SIZE, stdin);   // when the program reaches the fgets() function call, it waits for the user to input a string of characters and press enter. Once the user presses enter, fgets() reads the input from stdin and stores it in buffer2. If the user enters more than BUFFER_SIZE - 1 characters, fgets() will only read up to BUFFER_SIZE - 1 characters and store them in buffer2.
+	
+    		buffer2[strlen(buffer2) - 1] = '\0';   // Remove the newline character from the input
+    		if (strcmp(buffer2, "q") != 0) { // The line if (strcmp(buffer2, "q")!=0) checks that the user input stored in buffer 2 is not equal to the string "q" (zero if buffer2 is q). If the input is not "q", the length of the input string is printed using printf(). If the input is "q", the program exits without printing the length of the input string
+      			printf("The length of \'%s\' is %d characters\n",
+              		buffer2, (int)strlen(buffer2));   // Print the length of the input string and buffer2 string that user-inputted
+    		}
+  	   }while (strcmp(buffer2, "q") != 0);   // Repeat the loop until the user enters "q"
+  	   printf("*** End of measuring Strings Demo ***\n\n");   // Print a message to indicate the end of the program
 }
 
 
