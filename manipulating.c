@@ -1,5 +1,6 @@
 #include "manipulating.h"
-
+#define _CRT_SECURE_NO_WARNINGS  
+#define BUFFER_SIZE 80   
 void manipulating() {
 /* Version 3 */
 printf("***start of searching strings Demo ***\n");
@@ -10,7 +11,8 @@ printf("***start of searching strings Demo ***\n");
 			printf("Type the string (q - to quit): \n"); 
 			fgets(haystack, BUFFER_SIZE, stdin);
 			haystack[strlen(haystack) - 1] = '\0';
-			if (strcmp(haystack, "q") != 0) {
+			if (strcmp(haystack, "q") != 0)
+			{
 				printf("Type the substring: \n");
 				fgets(needle, BUFFER_SIZE, stdin);
 				needle[strlen(needle) - 1] = '\0';
