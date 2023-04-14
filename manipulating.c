@@ -1,32 +1,54 @@
-#include "manipulating.h"
-#define _CRT_SECURE_NO_WARNINGS  
-#define BUFFER_SIZE 80   
+#define _CRT_SECURE_NO_WARNINGS  // defines a preprocessor directive to turn off alerts for dangerous functions.
+#define BUFFER_SIZE 80   // Specifies the size of the character arrays that are utilised in the code.
+#include "manipulating.h"  // Includes header file "manipulating.h".   
 void manipulating() {
 /* Version 3 */
-// >> insert here
+// Print start message
+printf("***start of searching strings Demo ***\n");
+// Declare character arrays for strings
+char haystack[BUFFER_SIZE];
+char needle[BUFFER_SIZE];
+char* occurrence = NULL;
+
+// This loop prompts the user to input a string and a substring to search for
+// It terminates when the user enters "q" as the input string
+do {
+	// This line prompts the user to input a string
+	printf("Type the string (q - to quit): \n");
+// This line reads the user input from the console and stores it in the "haystack" array
+fgets(haystack, BUFFER_SIZE, stdin);
+
+// This line removes the trailing newline character from the input string
+haystack[strlen(haystack) - 1] = '\0';
+
+// This line checks if the user entered "q" to quit the program
+if (strcmp(haystack, "q") != 0) {
+
+	// This line prompts the user to input a substring to search for
+	printf("Type the substring: \n");
+
+	// This line reads the user input from the console and stores it in the "needle" array
+	fgets(needle, BUFFER_SIZE, stdin);
+
+	// This line removes the trailing newline character from the input substring
+	needle[strlen(needle) - 1] = '\0';
+
+	// This line finds the first occurrence of the substring in the input string and stores a pointer to it in the "occurrence" variable
+	occurrence = strstr(haystack, needle);
+
+	// This block checks if the substring was found in the input string
+	if (occurrence)
+		// This line prints the message indicating the position of the first occurrence of the substring in the input string
+		printf("\'%s\' found at %d position\n", needle, (int)(occurrence - haystack));
+	else
+		// This line prints the message indicating that the substring was not found in the input string
+		printf("Not found\n");
+} while (strcmp(haystack,"q") != 0);
+
+// This line prints the end of the program message for searching strings
+printf("*** End of Searching Strings Demo ***\n\n");
 
 
 
-}
 
 
-
-
-// printf("*** Start of Concatenating String Demo ***\n");
-//    char string1[BUFFER_SIZE]; //sets the array size to the value of BUFFER_SIZE
-//    char string2[BUFFER_SIZE]; //sets the array size to the value of BUFFER_SIZE
-//
-//    do{
-//        printf("Type the 1st string (q - to quit):\n");
-//        fgets(string1, BUFFER_SIZE, stdin); //gets and assigns the user input into intString,initializing the size of string1 to BUFFER_SIZE; indicating it is a user input(via keyboard);
-//        //fgets return string1 as [char or int](any number of characters or ints)[\n][\0]
-//        string1[strlen(string1) - 1] = '\0'; //it sets the index number (length of the string1 - 1) from \n to NULL ;unexpected results can be avoided in subsequent concatenation operations
-//        if ((strcmp(string1, "q") != 0)){ //it checks if string1 and q are not identical;strcmp will return 0 if string1 and q are identical.
-//            printf("Type the 2nd string:\n");
-//            fgets(string2, BUFFER_SIZE, stdin); //the input will be stored in string2, buffersize number of elements in string, and stdin indicates it is entered by user(keyboard)
-//            string2[strlen(string2) - 1] = '\0';//it sets the index number (length of the string2 - 1) from \n to NULL ;unexpected results can be avoided in subsequent concatenation operations;
-//            strcat(string1, string2); //it concatenates string 1 and string 2, "string1string2"
-//            printf("Concatenated string is \'%s\'\n", string1); //outputs the concatenation result
-//        }
-//    }while(strcmp(string1, "q") != 0); //the loop will end if user enters q, strcmp will return 0 if string1 and q are identical.
-//    printf("*** End of Concatenating String Demo ***\n\n");
