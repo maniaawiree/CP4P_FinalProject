@@ -24,6 +24,6 @@ printf("***start of searching strings Demo ***\n");
 
 			}
 		} while (strcmp(haystack,"q") != 0);
-			printf("*** End of Searching Strings Demo ***\n\n");
+			printf("*** End of Searching Strings Demo ***\n\n");
 }
 
