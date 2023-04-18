@@ -32,6 +32,6 @@ void manipulating() {
             else //if result is greater than 0, means compare1 string is bigger than compare2 string
                     printf("\'%s\' string is greater than \'%s\'\n", compare1, compare2); //the string in compare1 is greater than the string in compare2 is printed to the console
         }
-    } while (strcmp(compare1, "q") != 0); 
+    } while (strcmp(compare1, "q") != 0); //The loop continues as long as the user does not enter "q" to quit.
     printf("*** End of Comparing Strings Demo ***\n\n"); // prints the end of the program message
 }
