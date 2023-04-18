@@ -4,6 +4,5 @@
 
 void converting() {
 /* Version 3 */
-// >> insert here
 }
 
