@@ -2,7 +2,8 @@
 #include "manipulating.h"
 #include "converting.h"
 #include "tokenizing.h"
-#define _CRT_SECURE_NO_WARNINGS
+
+//need to be commented
 
 int main(void)
 {
