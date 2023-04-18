@@ -2,7 +2,8 @@
 #define BUFFER_SIZE 80 
 #define _CRT_SECURE_NO_WARNINGS  
 void manipulating() {
-    
+
+
 /* Version 1 */
     printf("*** start of Concatenating Strings Demo ***\n"); // Prints a message to start the concatenating strings demo.
     // Declares two character arrays with a size of BUFFER_SIZE.
@@ -58,4 +59,52 @@ void manipulating() {
         }
     } while (strcmp(compare1, "q") != 0); //The loop continues as long as the user does not enter "q" to quit.
     printf("*** End of Comparing Strings Demo ***\n\n"); // prints the end of the program message
+
+/* Version 3 */
+    printf("***start of searching strings Demo ***\n");
+// Declare character arrays for strings
+    char haystack[BUFFER_SIZE];
+    char needle[BUFFER_SIZE];
+    char* occurrence = NULL;
+
+// This loop prompts the user to input a string and a substring to search for
+// It terminates when the user enters "q" as the input string
+    do {
+	// This line prompts the user to input a string
+	    printf("Type the string (q - to quit): \n");
+// This line reads the user input from the console and stores it in the "haystack" array
+        fgets(haystack, BUFFER_SIZE, stdin);
+
+// This line removes the trailing newline character from the input string
+        haystack[strlen(haystack) - 1] = '\0';
+
+// This line checks if the user entered "q" to quit the program
+        if (strcmp(haystack, "q") != 0) {
+
+	// This line prompts the user to input a substring to search for
+	        printf("Type the substring: \n");
+
+	// This line reads the user input from the console and stores it in the "needle" array
+	        fgets(needle, BUFFER_SIZE, stdin);
+
+	// This line removes the trailing newline character from the input substring
+	        needle[strlen(needle) - 1] = '\0';
+
+	// This line finds the first occurrence of the substring in the input string and stores a pointer to it in the "occurrence" variable
+	    occurrence = strstr(haystack, needle);
+
+	// This block checks if the substring was found in the input string
+	        if (occurrence)
+		// This line prints the message indicating the position of the first occurrence of the substring in the input string
+		        printf("\'%s\' found at %d position\n", needle, (int)(occurrence - haystack));
+	        else
+		// This line prints the message indicating that the substring was not found in the input string
+		        printf("Not found\n");
+        }
+    } while (strcmp(string1, "q") != 0);
+    // Prints a message to indicate the end of the concatenating strings demo.
+    printf("*** End of†Concatenating strings Demo ***\n\n");
+
+
+
 }
