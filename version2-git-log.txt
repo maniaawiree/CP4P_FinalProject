@@ -1,0 +1,1836 @@
+commit fe61b60552539dae16acf2cc393240287e222d09
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Mon Apr 17 22:54:22 2023 -0400
+
+    comments added
+
+diff --git a/fundamentals.c b/fundamentals.c
+index fbd4e4f..02604d8 100644
+--- a/fundamentals.c
++++ b/fundamentals.c
+@@ -7,19 +7,22 @@
+ 
+ void fundamentals(){
+ /* Version 1 */
+-printf("*** Start of Indexing Strings Demo ***\n");
++    printf("*** Start of Indexing Strings Demo ***\n");
+ 	char	buffer1[BUFFER_SIZE];
+ 	char	numInput[NUM_INPUT_SIZE];
+ 	size_t	position;
+ 	do {
+ 		printf("Type not empty string (q - to quit):\n");
+-		fgets(buffer1, BUFFER_SIZE, stdin); //gets and assigns the user input into buffer1, initializing the size of buffer1 to BUFFER_SIZE; indicating it is a user input(via keyboard);
+-        //fgets return buffer1 as [char or int](any number of characters or ints)[\n][\0]
++		fgets(buffer1, BUFFER_SIZE, stdin); /*fgets() is used to read the user's input 
++                                                    and store it in the buffer1 array. 
++                                                    The function reads up to BUFFER_SIZE - 1 characters from the standard input (stdin) 
++                                                    and stores them in buffer1 array. If the user enters more characters than the size of 
++                                                    the array, the extra characters are discarded*/
+ 		buffer1[strlen(buffer1) - 1] = '\0'; //it sets the index number (length of the buffer1 string - 1) from \n to NULL ;unexpected results can be avoided in subsequent concatenation operations
+ 		if (strcmp(buffer1, "q") != 0) { //it checks if buffer1 and q are not identical;strcmp will return 0 if buffer1 and q are identical.
+ 			printf("Type the character position within the string;\n");
+ 			fgets(numInput, NUM_INPUT_SIZE, stdin); //gets and assigns the user input into numInput; initializing the size of numInput to NUM_INPUT_SIZE
+-			numInput[strlen(numInput) - 1] = '\0'; //it sets the index number (length of numInput string - 1) from \n to NULL
++			numInput[strlen(numInput) - 1] = '\0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
+ 			position = atoi(numInput); //atoi converts the string argument which is numInput to an integer and returns the value
+ 			if (position >= strlen(buffer1)) { //checks if the length of buffer1 string is less than or equal to the value of position and if true; if statements executes
+ 				position = strlen(buffer1) - 1; // the length of buffer1 minus 1 is assigned to poisition
+@@ -48,7 +51,7 @@ printf("*** Start of Indexing Strings Demo ***\n");
+             printf ("The length of \'%s\' is %d characters\n",
+                      buffer2, (int)strlen(buffer2));
+     } while (strcmp(buffer2, "q") != 0) ; //The loop continues as long as the user does not enter "q" to quit.
+-   printf ("*** End of Measuring Strinas Demo ***\n\n");
++    printf ("*** End of Measuring Strinas Demo ***\n\n");
+ 
+ }
+ 
+
+commit dd09c714e9187d447849b2c88427eff84b5cff02
+Merge: 09051a2 7af6dbd
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Mon Apr 17 22:53:52 2023 -0400
+
+    v2 added
+
+commit 7af6dbdb332a35a9e61e75725da01942f9282ba8
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Mon Apr 17 20:50:29 2023 -0400
+
+    commented while condition
+
+diff --git a/manipulating.c b/manipulating.c
+index 210b64c..0ff0a14 100644
+--- a/manipulating.c
++++ b/manipulating.c
+@@ -32,6 +32,6 @@ void manipulating() {
+             else //if result is greater than 0, means compare1 string is bigger than compare2 string
+                     printf("\'%s\' string is greater than \'%s\'\n", compare1, compare2); //the string in compare1 is greater than the string in compare2 is printed to the console
+         }
+-    } while (strcmp(compare1, "q") != 0); 
++    } while (strcmp(compare1, "q") != 0); //The loop continues as long as the user does not enter "q" to quit.
+     printf("*** End of Comparing Strings Demo ***\n\n"); // prints the end of the program message
+ }
+\ No newline at end of file
+
+commit b4ead1f8013010bae978b6db0975b7d3cbae93cb
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Mon Apr 17 20:49:54 2023 -0400
+
+    comments added
+
+diff --git a/fundamentals.c b/fundamentals.c
+index f9b446a..7583b80 100644
+--- a/fundamentals.c
++++ b/fundamentals.c
+@@ -7,6 +7,21 @@
+ 
+ void fundamentals(){
+ /* Version 2 */
++    printf("*** Start of Measuring strings Demo ***\n");
++    char buffer2[BUFFER_SIZE];
++    do { //prompts the user to enter a numeric string until they enter "q" to quit and it will be executed at least once.
++        printf("Type a string (q - to quit):\n"); 
++        fgets(buffer2, BUFFER_SIZE, stdin); /*fgets() is used to read the user's input 
++                                                    and store it in the buffer2 array. 
++                                                    The function reads up to BUFFER_SIZE - 1 characters from the standard input (stdin) 
++                                                    and stores them in buffer2. If the user enters more characters than the size of 
++                                                    the array, the extra characters are discarded*/
++        buffer2[strlen(buffer2) - 1] = '\0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
++        if (strcmp (buffer2, "q") != 0) // checks if the user entered "q" to quit the program
++            printf ("The length of \'%s\' is %d characters\n",
++                     buffer2, (int)strlen(buffer2)); //prints the input string along with the length of the string which is determined by strlen function
++    } while (strcmp(buffer2, "q") != 0) ; //The loop continues as long as the user does not enter "q" to quit.
++   printf ("*** End of Measuring Strings Demo ***\n\n");
+ }
+ 
+ 
+
+commit 80565e6b083d95ee125fc920adf1edd71c00cfa8
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Wed Apr 12 16:01:36 2023 -0400
+
+    some text editorial changes
+
+diff --git a/converting.c b/converting.c
+index c554507..b71ec16 100644
+--- a/converting.c
++++ b/converting.c
+@@ -1,10 +1,10 @@
++#include "converting.h"
+ #define _CRT_SECURE_NO_WARNINGS
+ #define BUFFER_SIZE 80 //defining macro 
+-#include "converting.h"
+ 
+ void converting() {
+ /* Version 2 */
+-printf("*** Start of Converting Strings to double Demo ***\n");
++    printf("*** Start of Converting Strings to double Demo ***\n");
+     char doubleString[BUFFER_SIZE];
+     double doubleNumber;
+     do{ //prompts the user to enter a numeric string until they enter "q" to quit.
+diff --git a/main.c b/main.c
+index 6bf0e9f..cac28a2 100644
+--- a/main.c
++++ b/main.c
+@@ -1,8 +1,8 @@
+-#define _CRT_SECURE_NO_WARNINGS
+ #include "fundamentals.h"
+ #include "manipulating.h"
+ #include "converting.h"
+ #include "tokenizing.h"
++#define _CRT_SECURE_NO_WARNINGS
+ 
+ //need to be commented
+ 
+diff --git a/manipulating.c b/manipulating.c
+index f76a366..210b64c 100644
+--- a/manipulating.c
++++ b/manipulating.c
+@@ -4,39 +4,34 @@
+ 
+ 
+ void manipulating() {
+- printf("*** Start of Comparing Strings Demo ***\n"); // prints the start of the program message
+-
+-        char compare1[BUFFER_SIZE]; // declares a character array to store the first string to be compared
+-        char compare2[BUFFER_SIZE]; // declares a character array to store the second string to be compared
+-        int result; // declares an integer variable to store the result of the string comparison
+-
+-        do //prompts the user to enter a numeric string until they enter "q" to quit and it will be executed at least once.
+-        {
+-            printf("Type the Ist string to compare (q - to quit) : \n"); // prompts the user to enter the first string to be compared
+-            fgets(compare1, BUFFER_SIZE, stdin); /*fgets() is used to read the user's input 
++/* Version 2 */
++    printf("*** Start of Comparing Strings Demo ***\n"); // prints the start of the program message
++    char compare1[BUFFER_SIZE]; // declares a character array to store the first string to be compared
++    char compare2[BUFFER_SIZE]; // declares a character array to store the second string to be compared
++    int result; // declares an integer variable to store the result of the string comparison
++    do {//prompts the user to enter a numeric string until they enter "q" to quit and it will be executed at least once.
++        printf("Type the Ist string to compare (q - to quit) : \n"); // prompts the user to enter the first string to be compared
++        fgets(compare1, BUFFER_SIZE, stdin); /*fgets() is used to read the user's input 
+                                                     and store it in the compare1 array. 
+                                                     The function reads up to BUFFER_SIZE - 1 characters from the standard input (stdin) 
+                                                     and stores them in compare1. If the user enters more characters than the size of 
+                                                     the array, the extra characters are discarded*/
+-            compare1[strlen(compare1) - 1] = '\0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
+-
+-            if (strcmp(compare1, "q") != 0) // checks if the user entered "q" to quit the program
+-            {
+-                printf("Type the 2nd string to compare: \n"); // prompts the user to enter the second string to be compared
+-                fgets(compare2, BUFFER_SIZE, stdin); /*The fgets() function reads the user's input 
++        compare1[strlen(compare1) - 1] = '\0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
++        if (strcmp(compare1, "q") != 0) { // checks if the user entered "q" to quit the program
++            printf("Type the 2nd string to compare: \n"); // prompts the user to enter the second string to be compared
++            fgets(compare2, BUFFER_SIZE, stdin); /*The fgets() function reads the user's input 
+                                             from the standard input stream and stores it in the phrases array.*/
+-                compare2[strlen(compare2) - 1] = '\0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
++            compare2[strlen(compare2) - 1] = '\0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
+ 
+-                result = strcmp(compare1, compare2); // compares the two strings and stores the return value of strcmp in the result variable
++            result = strcmp(compare1, compare2); // compares the two strings and stores the return value of strcmp in the result variable
+ 
+-                if (result < 0) // if result is less than 0 means the compare1 string is smaller than compare2
++            if (result < 0) // if result is less than 0 means the compare1 string is smaller than compare2
+                     printf("\'%s\' string is less than \'%s\'\n", compare1, compare2); //the string in compare1 is smaller than the string in compare2 is printed to the console
+-                else if (result == 0) // if result is 0 means compare1 and compare2 strings are equal
++            else if (result == 0) // if result is 0 means compare1 and compare2 strings are equal
+                     printf("\'%s\' string is equal to \'%s\'\n", compare1, compare2); //the string in compare1 is equal to compare2 is printed to the console
+-                else //if result is greater than 0, means compare1 string is bigger than compare2 string
++            else //if result is greater than 0, means compare1 string is bigger than compare2 string
+                     printf("\'%s\' string is greater than \'%s\'\n", compare1, compare2); //the string in compare1 is greater than the string in compare2 is printed to the console
+-            }
+-        } while (strcmp(compare1, "q") != 0); 
+-
+-        printf("*** End of Comparing Strings Demo ***\n\n"); // prints the end of the program message
++        }
++    } while (strcmp(compare1, "q") != 0); 
++    printf("*** End of Comparing Strings Demo ***\n\n"); // prints the end of the program message
+ }
+\ No newline at end of file
+diff --git a/tokenizing.c b/tokenizing.c
+index b0c4a99..7e2f0a1 100644
+--- a/tokenizing.c
++++ b/tokenizing.c
+@@ -4,7 +4,7 @@
+ 
+ void tokenizing() {
+ /* Version 2 */
+-printf("*** Start of Tokenizing Phrases Demo ***\n");
++    printf("*** Start of Tokenizing Phrases Demo ***\n");
+     char phrases[BUFFER_SIZE]; 
+     char* nextPhrase = NULL; //declaration of a pointer to char variable initialized to NULL
+     int phrasesCounter;
+
+commit 09051a296887fbf1cf0194bf0642413841fe5900
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Wed Apr 12 15:58:50 2023 -0400
+
+    version2 code added
+
+diff --git a/converting.c b/converting.c
+index 4d4f0ad..e42a8ba 100644
+--- a/converting.c
++++ b/converting.c
+@@ -1,6 +1,6 @@
++#include "converting.h"
+ #define _CRT_SECURE_NO_WARNINGS
+ #define BUFFER_SIZE 80 
+-#include "converting.h"
+ 
+ 
+ void converting() {
+@@ -22,7 +22,7 @@ do {
+     printf("*** End of Converting Strings to int Demo ***\n\n");
+ 
+ /* Version 2 */
+-printf("*** Start of Converting Strings to double Demo ***\n");
++    printf("*** Start of Converting Strings to double Demo ***\n");
+     char doubleString[BUFFER_SIZE];
+     double doubleNumber;
+     do{ 
+diff --git a/main.c b/main.c
+index d47bc88..45ff8ad 100644
+--- a/main.c
++++ b/main.c
+@@ -1,8 +1,8 @@
+-#define _CRT_SECURE_NO_WARNINGS
+ #include "fundamentals.h"
+ #include "manipulating.h"
+ #include "converting.h"
+ #include "tokenizing.h"
++#define _CRT_SECURE_NO_WARNINGS
+ 
+ int main(void)
+ {
+diff --git a/manipulating.c b/manipulating.c
+index 6cb6a57..04d2c3d 100644
+--- a/manipulating.c
++++ b/manipulating.c
+@@ -1,6 +1,6 @@
++#include "manipulating.h"
+ #define _CRT_SECURE_NO_WARNINGS  
+ #define BUFFER_SIZE 80   
+-#include "manipulating.h"
+ 
+ void manipulating() {
+     
+diff --git a/tokenizing.c b/tokenizing.c
+index 955ab19..e20d9fc 100644
+--- a/tokenizing.c
++++ b/tokenizing.c
+@@ -1,8 +1,6 @@
+ #include "tokenizing.h"
+ #define _CRT_SECURE_NO_WARNINGS
+ #define BUFFER_SIZE 300
+-#define _CRT_SECURE_NO_WARNINGS
+-#define BUFFER_SIZE 300
+ 
+ void tokenizing() {
+ /* Version 1 */
+
+commit 3ad6e07c249418a659a95c5328e07df6075df124
+Merge: 2551009 6644774
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Wed Apr 12 15:58:08 2023 -0400
+
+    READ comment instruction added
+
+commit 6644774eb7642585f395d2231ffba33695c81ca0
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Wed Apr 12 15:50:13 2023 -0400
+
+    modified
+
+diff --git a/manipulating.c b/manipulating.c
+index 2031c88..8294ef5 100644
+--- a/manipulating.c
++++ b/manipulating.c
+@@ -4,34 +4,28 @@
+ 
+ 
+ void manipulating() {
+- printf("*** Start of Comparing Strings Demo ***\n"); 
+-
+-        char compare1[BUFFER_SIZE]; 
+-        char compare2[BUFFER_SIZE]; 
+-        int result; 
+-
+-        do 
+-        {
+-            printf("Type the Ist string to compare (q - to quit) : \n"); 
+-            fgets(compare1, BUFFER_SIZE, stdin); 
+-            compare1[strlen(compare1) - 1] = '\0'; 
+-
+-            if (strcmp(compare1, "q") != 0) 
+-            {
+-                printf("Type the 2nd string to compare: \n"); 
+-                fgets(compare2, BUFFER_SIZE, stdin);
+-                compare2[strlen(compare2) - 1] = '\0'; 
+-
+-                result = strcmp(compare1, compare2); 
+-
+-                if (result < 0) 
++/* Version 2 */
++    printf("*** Start of Comparing Strings Demo ***\n"); 
++
++    char compare1[BUFFER_SIZE]; 
++    char compare2[BUFFER_SIZE]; 
++    int result; 
++    do {
++        printf("Type the Ist string to compare (q - to quit) : \n"); 
++        fgets(compare1, BUFFER_SIZE, stdin); 
++        compare1[strlen(compare1) - 1] = '\0'; 
++        if ((strcmp(compare1, "q") != 0)) {
++            printf("Type the 2nd string to compare: \n"); 
++            fgets(compare2, BUFFER_SIZE, stdin);
++            compare2[strlen(compare2) - 1] = '\0';
++            result = strcmp(compare1, compare2); 
++            if      (result < 0) 
+                     printf("\'%s\' string is less than \'%s\'\n", compare1, compare2); 
+-                else if (result == 0) 
++            else if (result == 0) 
+                     printf("\'%s\' string is equal to \'%s\'\n", compare1, compare2); 
+-                else 
++            else 
+                     printf("\'%s\' string is greater than \'%s\'\n", compare1, compare2); 
+-            }
+-        } while (strcmp(compare1, "q") != 0); 
+-
+-        printf("*** End of Comparing Strings Demo ***\n\n"); 
++        }
++    } while (strcmp(compare1, "q") != 0); 
++    printf("*** End of Comparing Strings Demo ***\n\n"); 
+ }
+
+commit 16bb018ed7f407c00b1dc54573b4440a74354a06
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Wed Apr 12 15:44:44 2023 -0400
+
+    all comments removed
+
+diff --git a/converting.c b/converting.c
+index 30bfd32..5d7e361 100644
+--- a/converting.c
++++ b/converting.c
+@@ -1,25 +1,20 @@
+ #define _CRT_SECURE_NO_WARNINGS
+-#define BUFFER_SIZE 80 //defining macro 
++#define BUFFER_SIZE 80 
+ #include "converting.h"
+ 
+-void converting() { //the function is called convering and doesnt take any parameters
++void converting() { 
+ /* Version 2 */
+ printf("*** Start of Converting Strings to double Demo ***\n");
+     char doubleString[BUFFER_SIZE];
+     double doubleNumber;
+-    do{ //prompts the user to enter a numeric string until they enter "q" to quit.
++    do{ 
+         printf("Type the double numeric string (q - to quit):\n");
+-        fgets(doubleString, BUFFER_SIZE, stdin); /*fgets() is used to read the user's input 
+-                                                    and store it in the doubleString array. 
+-                                                    The function reads up to BUFFER_SIZE - 1 characters from the standard input (stdin) 
+-                                                    and stores them in doubleString. If the user enters more characters than the size of 
+-                                                    the array, the extra characters are discarded*/
+-        doubleString[strlen(doubleString) - 1] = '\0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
+-        if ((strcmp(doubleString, "q") != 0)) { //if the user did not enter q to quit the function atof will be called
+-            doubleNumber = atof(doubleString); /*the function atof() is called to convert the string in doubleString to a double value, 
+-                                                then it is stored in doubleNumber variable */
+-            printf("Converted number is %f\n", doubleNumber); //the value of doubleNumber is printed to the console
++        fgets(doubleString, BUFFER_SIZE, stdin); 
++        doubleString[strlen(doubleString) - 1] = '\0'; 
++        if ((strcmp(doubleString, "q") != 0)) { 
++            doubleNumber = atof(doubleString); 
++            printf("Converted number is %f\n", doubleNumber); 
+         }
+-    } while (strcmp(doubleString, "q")  != 0); //The loop continues as long as the user does not enter "q" to quit.
++    } while (strcmp(doubleString, "q")  != 0); 
+     printf("*** End of Converting Strings to double Demo ***\n\n");
+ }
+diff --git a/fundamentals.c b/fundamentals.c
+index b482ed7..cb87e5e 100644
+--- a/fundamentals.c
++++ b/fundamentals.c
+@@ -6,18 +6,14 @@ void fundamentals(){
+ /* Version 2 */
+     printf("*** Start of Measuring strings Demo ***\n");
+     char buffer2[BUFFER_SIZE];
+-    do { //prompt the user to enter a numeric string until they enter "q" to quit.
++    do { 
+         printf("Type a string (q - to quit):\n"); 
+-        fgets(buffer2, BUFFER_SIZE, stdin); /*fgets() is used to read the user's input 
+-                                                    and store it in the buffer2 array. 
+-                                                    The function reads up to BUFFER_SIZE - 1 characters from the standard input (stdin) 
+-                                                    and stores them in buffer2 array. If the user enters more characters than the size of 
+-                                                    the array, the extra characters are discarded*/
+-        buffer2[strlen(buffer2) - 1] = '0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
++        fgets(buffer2, BUFFER_SIZE, stdin); 
++        buffer2[strlen(buffer2) - 1] = '0'; 
+         if (strcmp (buffer2, "q") != 0)
+             printf ("The length of \'%s\' is %d characters\n",
+                      buffer2, (int)strlen(buffer2));
+-    } while (strcmp(buffer2, "q") != 0) ; //The loop continues as long as the user does not enter "q" to quit.
++    } while (strcmp(buffer2, "q") != 0) ; 
+    printf ("*** End of Measuring Strinas Demo ***\n\n");
+ 
+ }
+\ No newline at end of file
+diff --git a/main.c b/main.c
+index 6bf0e9f..d47bc88 100644
+--- a/main.c
++++ b/main.c
+@@ -4,8 +4,6 @@
+ #include "converting.h"
+ #include "tokenizing.h"
+ 
+-//need to be commented
+-
+ int main(void)
+ {
+     char buff[10];
+@@ -17,26 +15,24 @@ int main(void)
+         printf("4 - Tokenizing\n");
+         printf("0 - Exit\n");
+         printf("Which module to run? \n");
+-        fgets(buff, 10, stdin); //gets and assigns the user input into buff, initializing the size of buff to 10; indicating it is a user input(via keyboard);
+-        //fgets return buffer1 as [char or int](any number of characters or ints)[\n][\0]
+-        
+-        //-which i guess why for switch statement the programmer uses buff[0] because buff[1] is '\n' and buff[2] is NULL;
+-        switch (buff[0]) //refers to the first element in buff array which is the module number entered by the user
++        fgets(buff, 10, stdin); 
++
++        switch (buff[0]) 
+         {
+-                //if buff[0] is 1 then main function will call fundamentals function
++                
+             case '1': fundamentals();
+                 break;
+-                //if buff[0] is 2 then main function will call manipulating function
++                
+             case '2': manipulating();
+                 break;
+-                //if buff[0] is 3 then main function will call converting function
++                
+             case '3': converting();
+                 break;
+-                //if buff[0] is 4 then main function will call tokenizing function
++                
+             case '4': tokenizing();
+                 break;
+         }
+-    } while (buff[0] != '0'); //if user enters 0 to exit, the loop will be executed again; because the condition of while is not met anymore; the code was executed at least one time because of do-while loop behavior
++    } while (buff[0] != '0'); 
+     return 0;
+     
+ }
+diff --git a/manipulating.c b/manipulating.c
+index f1cd24f..2031c88 100644
+--- a/manipulating.c
++++ b/manipulating.c
+@@ -1,42 +1,37 @@
+-#define _CRT_SECURE_NO_WARNINGS  // defines a preprocessor directive to turn off alerts for dangerous functions.
+-#define BUFFER_SIZE 80   // Specifies the size of the character arrays that are utilised in the code.
+-#include "manipulating.h"  // Includes header file "manipulating.h".
++#define _CRT_SECURE_NO_WARNINGS  
++#define BUFFER_SIZE 80   
++#include "manipulating.h"  
+ 
+ 
+ void manipulating() {
+- printf("*** Start of Comparing Strings Demo ***\n"); // prints the start of the program message
++ printf("*** Start of Comparing Strings Demo ***\n"); 
+ 
+-        char compare1[BUFFER_SIZE]; // declares a character array to store the first string to be compared
+-        char compare2[BUFFER_SIZE]; // declares a character array to store the second string to be compared
+-        int result; // declares an integer variable to store the result of the string comparison
++        char compare1[BUFFER_SIZE]; 
++        char compare2[BUFFER_SIZE]; 
++        int result; 
+ 
+-        do //prompts the user to enter a numeric string until they enter "q" to quit and it will be executed at least once.
++        do 
+         {
+-            printf("Type the Ist string to compare (q - to quit) : \n"); // prompts the user to enter the first string to be compared
+-            fgets(compare1, BUFFER_SIZE, stdin); /*fgets() is used to read the user's input 
+-                                                    and store it in the compare1 array. 
+-                                                    The function reads up to BUFFER_SIZE - 1 characters from the standard input (stdin) 
+-                                                    and stores them in compare1. If the user enters more characters than the size of 
+-                                                    the array, the extra characters are discarded*/
+-            compare1[strlen(compare1) - 1] = '\0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
+-
+-            if (strcmp(compare1, "q") != 0) // checks if the user entered "q" to quit the program
++            printf("Type the Ist string to compare (q - to quit) : \n"); 
++            fgets(compare1, BUFFER_SIZE, stdin); 
++            compare1[strlen(compare1) - 1] = '\0'; 
++
++            if (strcmp(compare1, "q") != 0) 
+             {
+-                printf("Type the 2nd string to compare: \n"); // prompts the user to enter the second string to be compared
+-                fgets(compare2, BUFFER_SIZE, stdin); /*The fgets() function reads the user's input 
+-                                            from the standard input stream and stores it in the phrases array.*/
+-                compare2[strlen(compare2) - 1] = '\0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
+-
+-                result = strcmp(compare1, compare2); // compares the two strings and stores the return value of strcmp in the result variable
+-
+-                if (result < 0) // if result is less than 0 means the compare1 string is smaller than compare2
+-                    printf("\'%s\' string is less than \'%s\'\n", compare1, compare2); //the string in compare1 is smaller than the string in compare2 is printed to the console
+-                else if (result == 0) // if result is 0 means compare1 and compare2 strings are equal
+-                    printf("\'%s\' string is equal to \'%s\'\n", compare1, compare2); //the string in compare1 is equal to compare2 is printed to the console
+-                else //if result is greater than 0, means compare1 string is bigger than compare2 string
+-                    printf("\'%s\' string is greater than \'%s\'\n", compare1, compare2); //the string in compare1 is greater than the string in compare2 is printed to the console
++                printf("Type the 2nd string to compare: \n"); 
++                fgets(compare2, BUFFER_SIZE, stdin);
++                compare2[strlen(compare2) - 1] = '\0'; 
++
++                result = strcmp(compare1, compare2); 
++
++                if (result < 0) 
++                    printf("\'%s\' string is less than \'%s\'\n", compare1, compare2); 
++                else if (result == 0) 
++                    printf("\'%s\' string is equal to \'%s\'\n", compare1, compare2); 
++                else 
++                    printf("\'%s\' string is greater than \'%s\'\n", compare1, compare2); 
+             }
+         } while (strcmp(compare1, "q") != 0); 
+ 
+-        printf("*** End of Comparing Strings Demo ***\n\n"); // prints the end of the program message
++        printf("*** End of Comparing Strings Demo ***\n\n"); 
+ }
+diff --git a/tokenizing.c b/tokenizing.c
+index c66a24d..fffc2f2 100644
+--- a/tokenizing.c
++++ b/tokenizing.c
+@@ -6,25 +6,20 @@ void tokenizing() {
+ /* Version 2 */
+ printf("*** Start of Tokenizing Phrases Demo ***\n");
+     char phrases[BUFFER_SIZE]; 
+-    char* nextPhrase = NULL; //declaration of a pointer to char variable initialized to 
++    char* nextPhrase = NULL;
+     int phrasesCounter;
+     do {
+         printf("Type a few phrases seperated by comma(q - to quit):\n");
+-        fgets(phrases, BUFFER_SIZE, stdin); /*fgets() is used to read the user's input 
+-                                                    and store it in the phrases array. 
+-                                                    The function reads up to BUFFER_SIZE - 1 characters from the standard input (stdin) 
+-                                                    and stores them in phrases. If the user enters more characters than the size of 
+-                                                    the array, the extra characters are discarded*/
+-        phrases[strlen(phrases) - 1] = '\0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
+-        if ((strcmp(phrases, "q") != 0)) { //if the user did not enter q to quit the function strtok will be called
+-            nextPhrase = strtok(phrases, ","); /*the strtok() function is used to tokenize the input string using the comma as a delimiter; 
+-                                                the first call to strtok() uses phrases array as an input */
++        fgets(phrases, BUFFER_SIZE, stdin); 
++        phrases[strlen(phrases) - 1] = '\0'; 
++        if ((strcmp(phrases, "q") != 0)) {
++            nextPhrase = strtok(phrases, ","); 
+             phrasesCounter = 1; 
+             while (nextPhrase) {
+-                printf("Phrases #%d is \'%s\'\n", phrasesCounter++, nextPhrase); //phraseCounter is the number of the phrase and nextPhrase is the phrase extracted from the user input
+-                nextPhrase = strtok(NULL, ","); //the subsequesnt calls use NULL so the strtok function continue using the same string
++                printf("Phrases #%d is \'%s\'\n", phrasesCounter++, nextPhrase);
++                nextPhrase = strtok(NULL, ","); 
+             }
+         }
+-    } while (strcmp(phrases, "q") != 0); //The loop continues as long as the user does not enter "q" to quit.
++    } while (strcmp(phrases, "q") != 0);
+     printf("*** End of Tokenizing Phrases Demo ***\n\n");
+ }
+\ No newline at end of file
+
+commit 67d2f9d81f392452d8d521fda09d941489a6f4c7
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Wed Apr 12 15:35:51 2023 -0400
+
+    ...
+
+diff --git a/tokenizing.c b/tokenizing.c
+index b9f1f4b..c66a24d 100644
+--- a/tokenizing.c
++++ b/tokenizing.c
+@@ -4,11 +4,11 @@
+ 
+ void tokenizing() {
+ /* Version 2 */
+-    printf("*** Start of Tokenizing Phrases Demo ***\n");
+-    char phrases[BUFFER_SIZE]; //declaration of an array of characters
+-    char* nextPhrase = NULL; //declaration of a pointer to a character
+-    int phrasesCounter; //declaration of an inter variable
+-    do { //prompt the user to enter a numeric string until they enter "q" to quit.
++printf("*** Start of Tokenizing Phrases Demo ***\n");
++    char phrases[BUFFER_SIZE]; 
++    char* nextPhrase = NULL; //declaration of a pointer to char variable initialized to 
++    int phrasesCounter;
++    do {
+         printf("Type a few phrases seperated by comma(q - to quit):\n");
+         fgets(phrases, BUFFER_SIZE, stdin); /*fgets() is used to read the user's input 
+                                                     and store it in the phrases array. 
+
+commit d55876520516e2dcecd440418ae1f15c6f7ffae6
+Merge: 2551009 2972ebd
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Wed Apr 12 15:32:49 2023 -0400
+
+    comments added
+
+commit 2972ebd724b71b8d12d4c984c409296e94bebf59
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Wed Apr 12 15:20:04 2023 -0400
+
+    ...
+
+diff --git a/tokenizing.c b/tokenizing.c
+index bbde9e8..b9f1f4b 100644
+--- a/tokenizing.c
++++ b/tokenizing.c
+@@ -4,7 +4,7 @@
+ 
+ void tokenizing() {
+ /* Version 2 */
+-printf("*** Start of Tokenizing Phrases Demo ***\n");
++    printf("*** Start of Tokenizing Phrases Demo ***\n");
+     char phrases[BUFFER_SIZE]; //declaration of an array of characters
+     char* nextPhrase = NULL; //declaration of a pointer to a character
+     int phrasesCounter; //declaration of an inter variable
+
+commit 08d89cd055ec9bd51e85a9c96f139dea6a6fd4b5
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Tue Apr 11 23:21:23 2023 -0400
+
+    convert and token comments added and manip comments modified
+    
+    description
+
+diff --git a/converting.c b/converting.c
+index c1ce9ca..30bfd32 100644
+--- a/converting.c
++++ b/converting.c
+@@ -1,20 +1,25 @@
+-#include "converting.h"
+ #define _CRT_SECURE_NO_WARNINGS
+-#define BUFFER_SIZE 80
++#define BUFFER_SIZE 80 //defining macro 
++#include "converting.h"
+ 
+-void converting() {
++void converting() { //the function is called convering and doesnt take any parameters
+ /* Version 2 */
+ printf("*** Start of Converting Strings to double Demo ***\n");
+     char doubleString[BUFFER_SIZE];
+     double doubleNumber;
+-    do{
++    do{ //prompts the user to enter a numeric string until they enter "q" to quit.
+         printf("Type the double numeric string (q - to quit):\n");
+-        fgets(doubleString, BUFFER_SIZE, stdin);
+-        doubleString[strlen(doubleString) - 1] = '\0';
+-        if ((strcmp(doubleString, "q") != 0)) {
+-            doubleNumber = atof(doubleString);
+-            printf("Converted number is %f\n", doubleNumber);
++        fgets(doubleString, BUFFER_SIZE, stdin); /*fgets() is used to read the user's input 
++                                                    and store it in the doubleString array. 
++                                                    The function reads up to BUFFER_SIZE - 1 characters from the standard input (stdin) 
++                                                    and stores them in doubleString. If the user enters more characters than the size of 
++                                                    the array, the extra characters are discarded*/
++        doubleString[strlen(doubleString) - 1] = '\0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
++        if ((strcmp(doubleString, "q") != 0)) { //if the user did not enter q to quit the function atof will be called
++            doubleNumber = atof(doubleString); /*the function atof() is called to convert the string in doubleString to a double value, 
++                                                then it is stored in doubleNumber variable */
++            printf("Converted number is %f\n", doubleNumber); //the value of doubleNumber is printed to the console
+         }
+-    } while (strcmp(doubleString, "q")  != 0);
++    } while (strcmp(doubleString, "q")  != 0); //The loop continues as long as the user does not enter "q" to quit.
+     printf("*** End of Converting Strings to double Demo ***\n\n");
+ }
+diff --git a/fundamentals.c b/fundamentals.c
+index 2c62557..b482ed7 100644
+--- a/fundamentals.c
++++ b/fundamentals.c
+@@ -6,14 +6,18 @@ void fundamentals(){
+ /* Version 2 */
+     printf("*** Start of Measuring strings Demo ***\n");
+     char buffer2[BUFFER_SIZE];
+-    do {
++    do { //prompt the user to enter a numeric string until they enter "q" to quit.
+         printf("Type a string (q - to quit):\n"); 
+-        fgets(buffer2, BUFFER_SIZE, stdin);
+-        buffer2[strlen(buffer2) - 1] = '0';
++        fgets(buffer2, BUFFER_SIZE, stdin); /*fgets() is used to read the user's input 
++                                                    and store it in the buffer2 array. 
++                                                    The function reads up to BUFFER_SIZE - 1 characters from the standard input (stdin) 
++                                                    and stores them in buffer2 array. If the user enters more characters than the size of 
++                                                    the array, the extra characters are discarded*/
++        buffer2[strlen(buffer2) - 1] = '0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
+         if (strcmp (buffer2, "q") != 0)
+             printf ("The length of \'%s\' is %d characters\n",
+                      buffer2, (int)strlen(buffer2));
+-    } while (strcmp(buffer2, "q") != 0) ;
++    } while (strcmp(buffer2, "q") != 0) ; //The loop continues as long as the user does not enter "q" to quit.
+    printf ("*** End of Measuring Strinas Demo ***\n\n");
+ 
+ }
+\ No newline at end of file
+diff --git a/manipulating.c b/manipulating.c
+index b95f36a..f1cd24f 100644
+--- a/manipulating.c
++++ b/manipulating.c
+@@ -10,28 +10,33 @@ void manipulating() {
+         char compare2[BUFFER_SIZE]; // declares a character array to store the second string to be compared
+         int result; // declares an integer variable to store the result of the string comparison
+ 
+-        do // start of a do-while loop that will execute at least once
++        do //prompts the user to enter a numeric string until they enter "q" to quit and it will be executed at least once.
+         {
+             printf("Type the Ist string to compare (q - to quit) : \n"); // prompts the user to enter the first string to be compared
+-            fgets(compare1, BUFFER_SIZE, stdin); // reads the user input from the console and stores it in the compare1 array
+-            compare1[strlen(compare1) - 1] = '\0'; // removes the trailing newline character from the compare1 string
++            fgets(compare1, BUFFER_SIZE, stdin); /*fgets() is used to read the user's input 
++                                                    and store it in the compare1 array. 
++                                                    The function reads up to BUFFER_SIZE - 1 characters from the standard input (stdin) 
++                                                    and stores them in compare1. If the user enters more characters than the size of 
++                                                    the array, the extra characters are discarded*/
++            compare1[strlen(compare1) - 1] = '\0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
+ 
+             if (strcmp(compare1, "q") != 0) // checks if the user entered "q" to quit the program
+             {
+                 printf("Type the 2nd string to compare: \n"); // prompts the user to enter the second string to be compared
+-                fgets(compare2, BUFFER_SIZE, stdin); // reads the user input from the console and stores it in the compare2 array
+-                compare2[strlen(compare2) - 1] = '\0'; // removes the trailing newline character from the compare2 string
+-
+-                result = strcmp(compare1, compare2); // compares the two strings and stores the result in the result variable
+-
+-                if (result < 0) // checks if the first string is less than the second string
+-                    printf("\'%s\' string is less than \'%s\'\n", compare1, compare2); // prints the message indicating that the first string is less than the second string
+-                else if (result == 0) // checks if the two strings are equal
+-                    printf("\'%s\' string is equal to \'%s\'\n", compare1, compare2); // prints the message indicating that the two strings are equal
+-                else // the first string is greater than the second string
+-                    printf("\'%s\' string is greater than \'%s\'\n", compare1, compare2); // prints the message indicating that the first string is greater than the second string
++                fgets(compare2, BUFFER_SIZE, stdin); /*The fgets() function reads the user's input 
++                                            from the standard input stream and stores it in the phrases array.*/
++                compare2[strlen(compare2) - 1] = '\0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
++
++                result = strcmp(compare1, compare2); // compares the two strings and stores the return value of strcmp in the result variable
++
++                if (result < 0) // if result is less than 0 means the compare1 string is smaller than compare2
++                    printf("\'%s\' string is less than \'%s\'\n", compare1, compare2); //the string in compare1 is smaller than the string in compare2 is printed to the console
++                else if (result == 0) // if result is 0 means compare1 and compare2 strings are equal
++                    printf("\'%s\' string is equal to \'%s\'\n", compare1, compare2); //the string in compare1 is equal to compare2 is printed to the console
++                else //if result is greater than 0, means compare1 string is bigger than compare2 string
++                    printf("\'%s\' string is greater than \'%s\'\n", compare1, compare2); //the string in compare1 is greater than the string in compare2 is printed to the console
+             }
+-        } while (strcmp(compare1, "q") != 0); // continues to prompt the user to enter strings to compare until they enter "q" to quit
++        } while (strcmp(compare1, "q") != 0); 
+ 
+         printf("*** End of Comparing Strings Demo ***\n\n"); // prints the end of the program message
+ }
+diff --git a/tokenizing.c b/tokenizing.c
+index 30beb91..bbde9e8 100644
+--- a/tokenizing.c
++++ b/tokenizing.c
+@@ -5,21 +5,26 @@
+ void tokenizing() {
+ /* Version 2 */
+ printf("*** Start of Tokenizing Phrases Demo ***\n");
+-    char phrases[BUFFER_SIZE];
+-    char* nextPhrase = NULL;
+-    int phrasesCounter;
+-    do {
++    char phrases[BUFFER_SIZE]; //declaration of an array of characters
++    char* nextPhrase = NULL; //declaration of a pointer to a character
++    int phrasesCounter; //declaration of an inter variable
++    do { //prompt the user to enter a numeric string until they enter "q" to quit.
+         printf("Type a few phrases seperated by comma(q - to quit):\n");
+-        fgets(phrases, BUFFER_SIZE, stdin);
+-        phrases[strlen(phrases) - 1] = '\0';
+-        if ((strcmp(phrases, "q") != 0)) {
+-            nextPhrase = strtok(phrases, ",");
+-            phrasesCounter = 1;
++        fgets(phrases, BUFFER_SIZE, stdin); /*fgets() is used to read the user's input 
++                                                    and store it in the phrases array. 
++                                                    The function reads up to BUFFER_SIZE - 1 characters from the standard input (stdin) 
++                                                    and stores them in phrases. If the user enters more characters than the size of 
++                                                    the array, the extra characters are discarded*/
++        phrases[strlen(phrases) - 1] = '\0'; //the newline character at the end of the user's input by is removed by replacing it with a null terminator.
++        if ((strcmp(phrases, "q") != 0)) { //if the user did not enter q to quit the function strtok will be called
++            nextPhrase = strtok(phrases, ","); /*the strtok() function is used to tokenize the input string using the comma as a delimiter; 
++                                                the first call to strtok() uses phrases array as an input */
++            phrasesCounter = 1; 
+             while (nextPhrase) {
+-                printf("Phrases #%d is \'%s\'\n", phrasesCounter++, nextPhrase);
+-                nextPhrase = strtok(NULL, ",");
++                printf("Phrases #%d is \'%s\'\n", phrasesCounter++, nextPhrase); //phraseCounter is the number of the phrase and nextPhrase is the phrase extracted from the user input
++                nextPhrase = strtok(NULL, ","); //the subsequesnt calls use NULL so the strtok function continue using the same string
+             }
+         }
+-    } while (strcmp(phrases, "q") != 0);
++    } while (strcmp(phrases, "q") != 0); //The loop continues as long as the user does not enter "q" to quit.
+     printf("*** End of Tokenizing Phrases Demo ***\n\n");
+ }
+\ No newline at end of file
+diff --git a/v2 b/v2
+new file mode 100755
+index 0000000..33ea450
+Binary files /dev/null and b/v2 differ
+
+commit 6fa762103e2cb5517077712b91d3a53b90a7c68e
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Tue Apr 11 22:45:28 2023 -0400
+
+    corrected typo
+
+diff --git a/fundamentals.c b/fundamentals.c
+index 47cb954..2c62557 100644
+--- a/fundamentals.c
++++ b/fundamentals.c
+@@ -10,7 +10,7 @@ void fundamentals(){
+         printf("Type a string (q - to quit):\n"); 
+         fgets(buffer2, BUFFER_SIZE, stdin);
+         buffer2[strlen(buffer2) - 1] = '0';
+-        if (stremp (buffer2, "q") != 0)
++        if (strcmp (buffer2, "q") != 0)
+             printf ("The length of \'%s\' is %d characters\n",
+                      buffer2, (int)strlen(buffer2));
+     } while (strcmp(buffer2, "q") != 0) ;
+
+commit 8411401189d33ee61d1c1013a6d1c40ec279447e
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Tue Apr 11 22:28:11 2023 -0400
+
+    main.c added
+
+diff --git a/main.c b/main.c
+new file mode 100644
+index 0000000..6bf0e9f
+--- /dev/null
++++ b/main.c
+@@ -0,0 +1,42 @@
++#define _CRT_SECURE_NO_WARNINGS
++#include "fundamentals.h"
++#include "manipulating.h"
++#include "converting.h"
++#include "tokenizing.h"
++
++//need to be commented
++
++int main(void)
++{
++    char buff[10];
++    do
++    {
++        printf("1 - Fundamentals\n");
++        printf("2 - Manipulation\n");
++        printf("3 - Converting\n");
++        printf("4 - Tokenizing\n");
++        printf("0 - Exit\n");
++        printf("Which module to run? \n");
++        fgets(buff, 10, stdin); //gets and assigns the user input into buff, initializing the size of buff to 10; indicating it is a user input(via keyboard);
++        //fgets return buffer1 as [char or int](any number of characters or ints)[\n][\0]
++        
++        //-which i guess why for switch statement the programmer uses buff[0] because buff[1] is '\n' and buff[2] is NULL;
++        switch (buff[0]) //refers to the first element in buff array which is the module number entered by the user
++        {
++                //if buff[0] is 1 then main function will call fundamentals function
++            case '1': fundamentals();
++                break;
++                //if buff[0] is 2 then main function will call manipulating function
++            case '2': manipulating();
++                break;
++                //if buff[0] is 3 then main function will call converting function
++            case '3': converting();
++                break;
++                //if buff[0] is 4 then main function will call tokenizing function
++            case '4': tokenizing();
++                break;
++        }
++    } while (buff[0] != '0'); //if user enters 0 to exit, the loop will be executed again; because the condition of while is not met anymore; the code was executed at least one time because of do-while loop behavior
++    return 0;
++    
++}
+
+commit 809791d354f7a4f5b528fa9319ac13eebc13cdf8
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Tue Apr 11 22:40:28 2023 -0400
+
+    changes to v2 saved locally
+
+diff --git a/fundamentals.c b/fundamentals.c
+index 855b9f6..47cb954 100644
+--- a/fundamentals.c
++++ b/fundamentals.c
+@@ -1,5 +1,19 @@
++#define _CRT_SECURE_NO_WARNINGS
++#define BUFFER_SIZE 80
+ #include "fundamentals.h"
+ 
+ void fundamentals(){
+ /* Version 2 */
++    printf("*** Start of Measuring strings Demo ***\n");
++    char buffer2[BUFFER_SIZE];
++    do {
++        printf("Type a string (q - to quit):\n"); 
++        fgets(buffer2, BUFFER_SIZE, stdin);
++        buffer2[strlen(buffer2) - 1] = '0';
++        if (stremp (buffer2, "q") != 0)
++            printf ("The length of \'%s\' is %d characters\n",
++                     buffer2, (int)strlen(buffer2));
++    } while (strcmp(buffer2, "q") != 0) ;
++   printf ("*** End of Measuring Strinas Demo ***\n\n");
++
+ }
+\ No newline at end of file
+diff --git a/manipulating.c b/manipulating.c
+index 29374e5..b95f36a 100644
+--- a/manipulating.c
++++ b/manipulating.c
+@@ -1,4 +1,3 @@
+-
+ #define _CRT_SECURE_NO_WARNINGS  // defines a preprocessor directive to turn off alerts for dangerous functions.
+ #define BUFFER_SIZE 80   // Specifies the size of the character arrays that are utilised in the code.
+ #include "manipulating.h"  // Includes header file "manipulating.h".
+@@ -35,8 +34,4 @@ void manipulating() {
+         } while (strcmp(compare1, "q") != 0); // continues to prompt the user to enter strings to compare until they enter "q" to quit
+ 
+         printf("*** End of Comparing Strings Demo ***\n\n"); // prints the end of the program message
+-    }
+-
+-
+-
+ }
+diff --git a/manipulating.h b/manipulating.h
+index 1a890bc..434f748 100644
+--- a/manipulating.h
++++ b/manipulating.h
+@@ -1,9 +1,6 @@
+ #ifndef _MANIPULATING_H_
+ #define _MANIPULATING_H_
+-
+ #include <stdio.h>
+-
+ #include <string.h>
+-
+ void manipulating(void);
+ #endif
+\ No newline at end of file
+diff --git a/tokenizing.h b/tokenizing.h
+index 09e0c4c..6efeb45 100644
+--- a/tokenizing.h
++++ b/tokenizing.h
+@@ -1,6 +1,5 @@
+ #ifndef _TOKENIZING_H_
+ #define _TOKENIZING_H_
+-
+ #include <stdio.h> 
+ #include <string.h> 
+ void tokenizing (void);
+
+commit 3c91cdc3083c72ec9aca8451c961d027b22eae13
+Author: hghesmati <130491316+hghesmati@users.noreply.github.com>
+Date:   Tue Apr 11 22:27:51 2023 -0400
+
+    Update manipulating.c
+
+diff --git a/manipulating.c b/manipulating.c
+index 1daca4a..29374e5 100644
+--- a/manipulating.c
++++ b/manipulating.c
+@@ -1,4 +1,8 @@
+-#include "manipulating.h"
++
++#define _CRT_SECURE_NO_WARNINGS  // defines a preprocessor directive to turn off alerts for dangerous functions.
++#define BUFFER_SIZE 80   // Specifies the size of the character arrays that are utilised in the code.
++#include "manipulating.h"  // Includes header file "manipulating.h".
++
+ 
+ void manipulating() {
+  printf("*** Start of Comparing Strings Demo ***\n"); // prints the start of the program message
+
+commit 59e4ba3970ddfcfe995c12461549e37899ec83cf
+Author: hghesmati <130491316+hghesmati@users.noreply.github.com>
+Date:   Tue Apr 11 22:06:18 2023 -0400
+
+    Update manipulating.c
+
+diff --git a/manipulating.c b/manipulating.c
+index af61b83..1daca4a 100644
+--- a/manipulating.c
++++ b/manipulating.c
+@@ -1,7 +1,38 @@
+ #include "manipulating.h"
+ 
+ void manipulating() {
+-/* Version 2 */
++ printf("*** Start of Comparing Strings Demo ***\n"); // prints the start of the program message
+ 
++        char compare1[BUFFER_SIZE]; // declares a character array to store the first string to be compared
++        char compare2[BUFFER_SIZE]; // declares a character array to store the second string to be compared
++        int result; // declares an integer variable to store the result of the string comparison
+ 
+-}
+\ No newline at end of file
++        do // start of a do-while loop that will execute at least once
++        {
++            printf("Type the Ist string to compare (q - to quit) : \n"); // prompts the user to enter the first string to be compared
++            fgets(compare1, BUFFER_SIZE, stdin); // reads the user input from the console and stores it in the compare1 array
++            compare1[strlen(compare1) - 1] = '\0'; // removes the trailing newline character from the compare1 string
++
++            if (strcmp(compare1, "q") != 0) // checks if the user entered "q" to quit the program
++            {
++                printf("Type the 2nd string to compare: \n"); // prompts the user to enter the second string to be compared
++                fgets(compare2, BUFFER_SIZE, stdin); // reads the user input from the console and stores it in the compare2 array
++                compare2[strlen(compare2) - 1] = '\0'; // removes the trailing newline character from the compare2 string
++
++                result = strcmp(compare1, compare2); // compares the two strings and stores the result in the result variable
++
++                if (result < 0) // checks if the first string is less than the second string
++                    printf("\'%s\' string is less than \'%s\'\n", compare1, compare2); // prints the message indicating that the first string is less than the second string
++                else if (result == 0) // checks if the two strings are equal
++                    printf("\'%s\' string is equal to \'%s\'\n", compare1, compare2); // prints the message indicating that the two strings are equal
++                else // the first string is greater than the second string
++                    printf("\'%s\' string is greater than \'%s\'\n", compare1, compare2); // prints the message indicating that the first string is greater than the second string
++            }
++        } while (strcmp(compare1, "q") != 0); // continues to prompt the user to enter strings to compare until they enter "q" to quit
++
++        printf("*** End of Comparing Strings Demo ***\n\n"); // prints the end of the program message
++    }
++
++
++
++}
+
+commit 2551009c33004de72a4e72d63a2ad2336c10d46b
+Author: maniaawiree <102549369+maniaawiree@users.noreply.github.com>
+Date:   Tue Apr 11 11:07:20 2023 -0400
+
+    read description on how to submit the work
+
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000..c0a6ac5
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,9 @@
++# CP4P_FinalProject
++Group Bb 07
++
++#Where to add?
++add and make the changes in the matching branch to the version you are working on.
++For exaple if you are making changes to version 2, you must be in v2 branch.
++if adding the source code only, please commit -m "adding code"
++if adding comments, please commit -m "tokening/ manipulating/ fundamentals/ converting comments added"
++
+
+commit 558e271c6ed10769dcd7abdb378d3b7b6189cfcb
+Merge: eb98900 8e9d880
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Mon Apr 10 13:55:43 2023 -0400
+
+    v2 to main merged
+
+commit 8e9d88074b3b4c3a26a31411b37d7a222db13e8c
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Mon Apr 10 13:30:30 2023 -0400
+
+    Tokenizing and convering code added
+    
+    description
+
+diff --git a/converting.c b/converting.c
+index 7c3d362..c1ce9ca 100644
+--- a/converting.c
++++ b/converting.c
+@@ -1,6 +1,20 @@
+ #include "converting.h"
++#define _CRT_SECURE_NO_WARNINGS
++#define BUFFER_SIZE 80
+ 
+ void converting() {
+ /* Version 2 */
+-
++printf("*** Start of Converting Strings to double Demo ***\n");
++    char doubleString[BUFFER_SIZE];
++    double doubleNumber;
++    do{
++        printf("Type the double numeric string (q - to quit):\n");
++        fgets(doubleString, BUFFER_SIZE, stdin);
++        doubleString[strlen(doubleString) - 1] = '\0';
++        if ((strcmp(doubleString, "q") != 0)) {
++            doubleNumber = atof(doubleString);
++            printf("Converted number is %f\n", doubleNumber);
++        }
++    } while (strcmp(doubleString, "q")  != 0);
++    printf("*** End of Converting Strings to double Demo ***\n\n");
+ }
+diff --git a/tokenizing.c b/tokenizing.c
+index 450a336..30beb91 100644
+--- a/tokenizing.c
++++ b/tokenizing.c
+@@ -1,6 +1,25 @@
+ #include "tokenizing.h"
++#define _CRT_SECURE_NO_WARNINGS
++#define BUFFER_SIZE 300
+ 
+ void tokenizing() {
+ /* Version 2 */
+-
++printf("*** Start of Tokenizing Phrases Demo ***\n");
++    char phrases[BUFFER_SIZE];
++    char* nextPhrase = NULL;
++    int phrasesCounter;
++    do {
++        printf("Type a few phrases seperated by comma(q - to quit):\n");
++        fgets(phrases, BUFFER_SIZE, stdin);
++        phrases[strlen(phrases) - 1] = '\0';
++        if ((strcmp(phrases, "q") != 0)) {
++            nextPhrase = strtok(phrases, ",");
++            phrasesCounter = 1;
++            while (nextPhrase) {
++                printf("Phrases #%d is \'%s\'\n", phrasesCounter++, nextPhrase);
++                nextPhrase = strtok(NULL, ",");
++            }
++        }
++    } while (strcmp(phrases, "q") != 0);
++    printf("*** End of Tokenizing Phrases Demo ***\n\n");
+ }
+\ No newline at end of file
+
+commit c99a1610b996bb67bc033982beaba271daa717c2
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Sun Apr 9 20:45:23 2023 -0400
+
+    changes madee
+
+diff --git a/converting.c b/converting.c
+index 55b046d..7c3d362 100644
+--- a/converting.c
++++ b/converting.c
+@@ -1,14 +1,6 @@
+ #include "converting.h"
+ 
+ void converting() {
+-/* Version 1 */
+-
+-
+ /* Version 2 */
+ 
+-// djbqkjdb
+-
+-
+-/* Version 3 */
+-
+ }
+diff --git a/fundamentals.c b/fundamentals.c
+index 3bf4699..855b9f6 100644
+--- a/fundamentals.c
++++ b/fundamentals.c
+@@ -1,11 +1,5 @@
+ #include "fundamentals.h"
+ 
+ void fundamentals(){
+-/* Version 1 */
+-
+ /* Version 2 */
+-
+-
+-/* Version 3 */
+-
+ }
+\ No newline at end of file
+diff --git a/main.c b/main.c
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/manipulating.c b/manipulating.c
+index ea4b6e6..af61b83 100644
+--- a/manipulating.c
++++ b/manipulating.c
+@@ -1,10 +1,7 @@
+ #include "manipulating.h"
+ 
+ void manipulating() {
+-/* Version 1 */
+-
+ /* Version 2 */
+ 
+-/* Version 3 */
+ 
+ }
+\ No newline at end of file
+diff --git a/tokenizing.c b/tokenizing.c
+index 34ecebb..450a336 100644
+--- a/tokenizing.c
++++ b/tokenizing.c
+@@ -1,12 +1,6 @@
+ #include "tokenizing.h"
+ 
+ void tokenizing() {
+-/* Version 1 */
+-
+-
+ /* Version 2 */
+ 
+-
+-/* Version 3 */
+-
+ }
+\ No newline at end of file
+
+commit eb9890046882382b2f442aa249d7f4ff6198487f
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Sun Apr 9 20:43:12 2023 -0400
+
+    changes to conver and fundamentals
+
+diff --git a/converting.c b/converting.c
+index f62eae5..adfb044 100644
+--- a/converting.c
++++ b/converting.c
+@@ -20,7 +20,8 @@ do {
+     } while (strcmp(intString, "q") != 0); //the loop will end if user enters q, strcmp will return 0 if intString and q are identical.
+     printf("*** End of Converting Strings to int Demo ***\n\n");
+ /* Version 2 */
+-// >> insert here
++
++// djbqkjdb
+ 
+ 
+ /* Version 3 */
+diff --git a/fundamentals.c b/fundamentals.c
+index 0913c44..8e87f97 100644
+--- a/fundamentals.c
++++ b/fundamentals.c
+@@ -5,7 +5,7 @@
+ 
+ 
+ 
+-void fundamentals() {
++void fundamentals(){
+ /* Version 1 */
+ printf("*** Start of Indexing Strings Demo ***\n");
+ 	char	buffer1[BUFFER_SIZE];
+
+commit 7686aadc695cf681d6d474b0d0a43a9025b7fb6c
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Sun Apr 9 20:34:58 2023 -0400
+
+    changes made to version2
+
+diff --git a/converting.c b/converting.c
+index f451ee6..55b046d 100644
+--- a/converting.c
++++ b/converting.c
+@@ -2,15 +2,13 @@
+ 
+ void converting() {
+ /* Version 1 */
+->> insert here
+ 
+ 
+ /* Version 2 */
+->> insert here
+ 
++// djbqkjdb
+ 
+-/* Version 3 */
+->> insert here
+ 
++/* Version 3 */
+ 
+ }
+diff --git a/fundamentals.c b/fundamentals.c
+index 0bae8cf..3bf4699 100644
+--- a/fundamentals.c
++++ b/fundamentals.c
+@@ -1,16 +1,11 @@
+ #include "fundamentals.h"
+ 
+-void fundamentals() {
++void fundamentals(){
+ /* Version 1 */
+->> insert here
+-
+ 
+ /* Version 2 */
+->> insert here
+ 
+ 
+ /* Version 3 */
+->> insert here
+-
+ 
+ }
+\ No newline at end of file
+diff --git a/manipulating.c b/manipulating.c
+index bd5910a..ea4b6e6 100644
+--- a/manipulating.c
++++ b/manipulating.c
+@@ -2,15 +2,9 @@
+ 
+ void manipulating() {
+ /* Version 1 */
+->> insert here
+-
+ 
+ /* Version 2 */
+->> insert here
+-
+ 
+ /* Version 3 */
+->> insert here
+-
+ 
+ }
+\ No newline at end of file
+diff --git a/tokenizing.c b/tokenizing.c
+index ebd903b..34ecebb 100644
+--- a/tokenizing.c
++++ b/tokenizing.c
+@@ -2,15 +2,11 @@
+ 
+ void tokenizing() {
+ /* Version 1 */
+->> insert here
+ 
+ 
+ /* Version 2 */
+->> insert here
+ 
+ 
+ /* Version 3 */
+->> insert here
+-
+ 
+ }
+\ No newline at end of file
+
+commit 64946c77eb9a7f1f768ae7a7e84df095edb665ee
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Sun Apr 9 20:13:48 2023 -0400
+
+    files added from local directory
+    
+    push to v1 branch
+
+diff --git a/converting.c b/converting.c
+index f451ee6..f62eae5 100644
+--- a/converting.c
++++ b/converting.c
+@@ -1,16 +1,31 @@
+ #include "converting.h"
++#define _CRT_SECURE_NO_WARNINGS
++#define BUFFER_SIZE 80
+ 
+ void converting() {
+ /* Version 1 */
+->> insert here
+-
+ 
++printf("*** Start of Converting Strings to int Demo ***\n");
++    char intString[BUFFER_SIZE];
++    int intNumber;
++do {
++    printf("Type an int numeric string (q - to quit):\n");
++    fgets(intString, BUFFER_SIZE, stdin); //gets and assigns the user input into intString,initializing the size of intString to BUFFER_SIZE; indicating it is a user input(via keyboard);
++    //fgets return intString as [char or int](any number of characters or ints)[\n][\0] 
++    intString[strlen(intString) - 1] = '\0'; //it sets the index number (length of the intString string - 1) from \n to NULL ;unexpected results can be avoided in subsequent concatenation operations
++    if (strcmp(intString, "q") != 0) { //it checks if intString and q are not identical;strcmp will return 0 if intString and q are identical.
++        intNumber = atoi(intString); //atoi returns 0 if there is no number at the beginning of the string, or return the integer string at the beginning of the string entered by user 75bhj -> 75; aaaa -> 0
++        printf("Converted number is %d\n", intNumber); //it outputs the first intergers entered by user
++        }
++    } while (strcmp(intString, "q") != 0); //the loop will end if user enters q, strcmp will return 0 if intString and q are identical.
++    printf("*** End of Converting Strings to int Demo ***\n\n");
+ /* Version 2 */
+->> insert here
++// >> insert here
+ 
+ 
+ /* Version 3 */
+->> insert here
++// >> insert here
+ 
+ 
+ }
++
+diff --git a/fundamentals.c b/fundamentals.c
+index 0bae8cf..0913c44 100644
+--- a/fundamentals.c
++++ b/fundamentals.c
+@@ -1,16 +1,47 @@
+ #include "fundamentals.h"
++#define _CRT_SECURE_NO_WARNINGS
++#define BUFFER_SIZE		80
++#define NUM_INPUT_SIZE	10
++
++
+ 
+ void fundamentals() {
+ /* Version 1 */
+->> insert here
++printf("*** Start of Indexing Strings Demo ***\n");
++	char	buffer1[BUFFER_SIZE];
++	char	numInput[NUM_INPUT_SIZE];
++	size_t	position;
++	do {
++		printf("Type not empty string (q - to quit):\n");
++		fgets(buffer1, BUFFER_SIZE, stdin); //gets and assigns the user input into buffer1, initializing the size of buffer1 to BUFFER_SIZE; indicating it is a user input(via keyboard);
++        //fgets return buffer1 as [char or int](any number of characters or ints)[\n][\0]
++		buffer1[strlen(buffer1) - 1] = '\0'; //it sets the index number (length of the buffer1 string - 1) from \n to NULL ;unexpected results can be avoided in subsequent concatenation operations
++		if (strcmp(buffer1, "q") != 0) { //it checks if buffer1 and q are not identical;strcmp will return 0 if buffer1 and q are identical.
++			printf("Type the character position within the string;\n");
++			fgets(numInput, NUM_INPUT_SIZE, stdin); //gets and assigns the user input into numInput; initializing the size of numInput to NUM_INPUT_SIZE
++			numInput[strlen(numInput) - 1] = '\0'; //it sets the index number (length of numInput string - 1) from \n to NULL
++			position = atoi(numInput); //atoi converts the string argument which is numInput to an integer and returns the value
++			if (position >= strlen(buffer1)) { //checks if the length of buffer1 string is less than or equal to the value of position and if true; if statements executes
++				position = strlen(buffer1) - 1; // the length of buffer1 minus 1 is assigned to poisition
++				printf("Too big... Position reduced to max. availbale\n");
++			}
++			printf("The character found at %d position is \'%c\'\n",
++							(int)position, buffer1[position]);
++            //bug : buffer1[position] should be buffer1[position-1] instead to get the actual element position character
++		}
++	} while (strcmp(buffer1, "q") != 0);//the loop will end if user enters q, strcmp will return 0 if buffer1 and q are identical.
++	printf("*** End of Indexing Strings Demo ***\n\n");
+ 
+ 
+ /* Version 2 */
+->> insert here
++// >> insert here
+ 
+ 
+ /* Version 3 */
+->> insert here
++// >> insert here
++
++
++}
++
+ 
+ 
+-}
+\ No newline at end of file
+diff --git a/main.c b/main.c
+index e69de29..6bf0e9f 100644
+--- a/main.c
++++ b/main.c
+@@ -0,0 +1,42 @@
++#define _CRT_SECURE_NO_WARNINGS
++#include "fundamentals.h"
++#include "manipulating.h"
++#include "converting.h"
++#include "tokenizing.h"
++
++//need to be commented
++
++int main(void)
++{
++    char buff[10];
++    do
++    {
++        printf("1 - Fundamentals\n");
++        printf("2 - Manipulation\n");
++        printf("3 - Converting\n");
++        printf("4 - Tokenizing\n");
++        printf("0 - Exit\n");
++        printf("Which module to run? \n");
++        fgets(buff, 10, stdin); //gets and assigns the user input into buff, initializing the size of buff to 10; indicating it is a user input(via keyboard);
++        //fgets return buffer1 as [char or int](any number of characters or ints)[\n][\0]
++        
++        //-which i guess why for switch statement the programmer uses buff[0] because buff[1] is '\n' and buff[2] is NULL;
++        switch (buff[0]) //refers to the first element in buff array which is the module number entered by the user
++        {
++                //if buff[0] is 1 then main function will call fundamentals function
++            case '1': fundamentals();
++                break;
++                //if buff[0] is 2 then main function will call manipulating function
++            case '2': manipulating();
++                break;
++                //if buff[0] is 3 then main function will call converting function
++            case '3': converting();
++                break;
++                //if buff[0] is 4 then main function will call tokenizing function
++            case '4': tokenizing();
++                break;
++        }
++    } while (buff[0] != '0'); //if user enters 0 to exit, the loop will be executed again; because the condition of while is not met anymore; the code was executed at least one time because of do-while loop behavior
++    return 0;
++    
++}
+diff --git a/manipulating.c b/manipulating.c
+index bd5910a..a52f8ce 100644
+--- a/manipulating.c
++++ b/manipulating.c
+@@ -1,16 +1,60 @@
+ #include "manipulating.h"
+-
++#define _CRT_SECURE_NO_WARNINGS  
++#define BUFFER_SIZE 80   
+ void manipulating() {
+ /* Version 1 */
+->> insert here
++printf("*** start of Concatenating Strings Demo ***\n"); // Prints a message to start the concatenating strings demo.
++    // Declares two character arrays with a size of BUFFER_SIZE.
++    char string1[BUFFER_SIZE];
++    char string2[BUFFER_SIZE];
++    do {  // Loops until the user inputs "q" as the first string.
++        printf("Type the lst string (g - to quit): \n");  // Requests the first string from the user.
++        fgets(string1, BUFFER_SIZE, stdin);  // Reads the user's input and removes the newline character.
++        string1[strlen(string1) - 1] = '\0';
++        //  if the first string is not "q.", prompts the user to input the second string.
++        if ((strcmp(string1, "q") != 0))
++        {
++            printf("Type the 2nd string: \n");
++            // Reads the user's input for the second string and removes the newline character.
++            fgets(string2, BUFFER_SIZE, stdin);
++            string2[strlen(string2) - 1] = '\0';
++            // Concatenates the two strings and prints the result.
++            strcat(string1, string2);
++            printf("Concatenated string is \'%s\'\n", string1);
++        }
++    } while (strcmp(string1, "q") != 0);
++    // Prints a message to indicate the end of the concatenating strings demo.
++    printf("*** End of†Concatenating strings Demo ***\n\n");
+ 
+ 
+ /* Version 2 */
+->> insert here
++// >> insert here
+ 
+ 
+ /* Version 3 */
+->> insert here
++// >> insert here
++
++
++}
++
++
+ 
+ 
+-}
+\ No newline at end of file
++// printf("*** Start of Concatenating String Demo ***\n");
++//    char string1[BUFFER_SIZE]; //sets the array size to the value of BUFFER_SIZE
++//    char string2[BUFFER_SIZE]; //sets the array size to the value of BUFFER_SIZE
++//
++//    do{
++//        printf("Type the 1st string (q - to quit):\n");
++//        fgets(string1, BUFFER_SIZE, stdin); //gets and assigns the user input into intString,initializing the size of string1 to BUFFER_SIZE; indicating it is a user input(via keyboard);
++//        //fgets return string1 as [char or int](any number of characters or ints)[\n][\0]
++//        string1[strlen(string1) - 1] = '\0'; //it sets the index number (length of the string1 - 1) from \n to NULL ;unexpected results can be avoided in subsequent concatenation operations
++//        if ((strcmp(string1, "q") != 0)){ //it checks if string1 and q are not identical;strcmp will return 0 if string1 and q are identical.
++//            printf("Type the 2nd string:\n");
++//            fgets(string2, BUFFER_SIZE, stdin); //the input will be stored in string2, buffersize number of elements in string, and stdin indicates it is entered by user(keyboard)
++//            string2[strlen(string2) - 1] = '\0';//it sets the index number (length of the string2 - 1) from \n to NULL ;unexpected results can be avoided in subsequent concatenation operations;
++//            strcat(string1, string2); //it concatenates string 1 and string 2, "string1string2"
++//            printf("Concatenated string is \'%s\'\n", string1); //outputs the concatenation result
++//        }
++//    }while(strcmp(string1, "q") != 0); //the loop will end if user enters q, strcmp will return 0 if string1 and q are identical.
++//    printf("*** End of Concatenating String Demo ***\n\n");
+\ No newline at end of file
+diff --git a/manipulating.h b/manipulating.h
+index 1a890bc..434f748 100644
+--- a/manipulating.h
++++ b/manipulating.h
+@@ -1,9 +1,6 @@
+ #ifndef _MANIPULATING_H_
+ #define _MANIPULATING_H_
+-
+ #include <stdio.h>
+-
+ #include <string.h>
+-
+ void manipulating(void);
+ #endif
+\ No newline at end of file
+diff --git a/tokenizing.c b/tokenizing.c
+index ebd903b..bb7607f 100644
+--- a/tokenizing.c
++++ b/tokenizing.c
+@@ -1,16 +1,39 @@
+ #include "tokenizing.h"
++#define _CRT_SECURE_NO_WARNINGS
++#define BUFFER_SIZE 300
+ 
+ void tokenizing() {
+ /* Version 1 */
+->> insert here
++printf("*** Start of Tokenizing Words Demo ***\n");
++
++char words[BUFFER_SIZE];
++char* nextWord = NULL;
++int wordsCounter;
++
++do{
++    printf("Type a few words separated by sapce (q - to quit):\n"); //typo in sapce
++    fgets(words, BUFFER_SIZE, stdin); //gets and assigns the user input into words, initializing the size of words to BUFFER_SIZE; indicating it is a user input(via keyboard);
++    //fgets return words as [char or int](any number of characters or ints)[\n][\0]
++    words[strlen(words) - 1] = '\0'; //it sets the index number (length of the words string - 1) from \n to NULL ;unexpected results can be avoided in subsequent concatenation operations
++    if (strcmp(words, "q") != 0) {  //it checks if words and q are not identical;strcmp will return 0 if string1 and q are identical.
++        nextWord = strtok(words, " "); //strtok breaks string words into series of tokens using " "
++        wordsCounter = 1; //assign 1 to wordsCounter for the first word
++        while (nextWord){ //loop executes while there is a word in nextWord and its not NULL
++            printf("Words #%d is \'%s\'\n", wordsCounter++, nextWord); //words counter is displayed and then increases by 1 for the next word
++            nextWord = strtok(NULL, " "); //Hey/0/0 so it breaks the NULL string which is left after the first word into series of tokens using " "; if this is not done, the next word wont be printed properly;
++        }
++    }
++
++} while (strcmp(words, "q") != 0); //the loop will end if user enters q, strcmp will return 0 is words and q are identical. 
++printf("*** Ends of Tokenizing Words Demo ***\n\n");
+ 
+ 
+ /* Version 2 */
+->> insert here
++// >> insert here
+ 
+ 
+ /* Version 3 */
+->> insert here
++// >> insert here
+ 
+ 
+ }
+\ No newline at end of file
+diff --git a/tokenizing.h b/tokenizing.h
+index 09e0c4c..6efeb45 100644
+--- a/tokenizing.h
++++ b/tokenizing.h
+@@ -1,6 +1,5 @@
+ #ifndef _TOKENIZING_H_
+ #define _TOKENIZING_H_
+-
+ #include <stdio.h> 
+ #include <string.h> 
+ void tokenizing (void);
+
+commit a9ec8547adbc776b9e7660ce4683947790b2e364
+Author: mmojdehifar <mmojdehifar@myseneca.ca>
+Date:   Sun Apr 9 19:56:54 2023 -0400
+
+    all files added
+
+diff --git a/.DS_Store b/.DS_Store
+new file mode 100644
+index 0000000..7b76d03
+Binary files /dev/null and b/.DS_Store differ
+diff --git a/converting-testing.txt b/converting-testing.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/converting.c b/converting.c
+new file mode 100644
+index 0000000..f451ee6
+--- /dev/null
++++ b/converting.c
+@@ -0,0 +1,16 @@
++#include "converting.h"
++
++void converting() {
++/* Version 1 */
++>> insert here
++
++
++/* Version 2 */
++>> insert here
++
++
++/* Version 3 */
++>> insert here
++
++
++}
+diff --git a/converting.h b/converting.h
+new file mode 100644
+index 0000000..a301cca
+--- /dev/null
++++ b/converting.h
+@@ -0,0 +1,7 @@
++#ifndef _CONVERTING_H_
++#define _CONVERTING_H_
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++void converting(void);
++#endif
+\ No newline at end of file
+diff --git a/fundamentals-testing.txt b/fundamentals-testing.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/fundamentals.c b/fundamentals.c
+new file mode 100644
+index 0000000..0bae8cf
+--- /dev/null
++++ b/fundamentals.c
+@@ -0,0 +1,16 @@
++#include "fundamentals.h"
++
++void fundamentals() {
++/* Version 1 */
++>> insert here
++
++
++/* Version 2 */
++>> insert here
++
++
++/* Version 3 */
++>> insert here
++
++
++}
+\ No newline at end of file
+diff --git a/fundamentals.h b/fundamentals.h
+new file mode 100644
+index 0000000..221f961
+--- /dev/null
++++ b/fundamentals.h
+@@ -0,0 +1,7 @@
++#ifndef _FUNDAMENTALS_H_
++#define _FUNDAMENTALS_H_
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++void fundamentals(void);
++#endif
+\ No newline at end of file
+diff --git a/main-testing.txt b/main-testing.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/main.c b/main.c
+new file mode 100644
+index 0000000..e69de29
+diff --git a/manipulating.c b/manipulating.c
+new file mode 100644
+index 0000000..bd5910a
+--- /dev/null
++++ b/manipulating.c
+@@ -0,0 +1,16 @@
++#include "manipulating.h"
++
++void manipulating() {
++/* Version 1 */
++>> insert here
++
++
++/* Version 2 */
++>> insert here
++
++
++/* Version 3 */
++>> insert here
++
++
++}
+\ No newline at end of file
+diff --git a/manipulating.h b/manipulating.h
+new file mode 100644
+index 0000000..1a890bc
+--- /dev/null
++++ b/manipulating.h
+@@ -0,0 +1,9 @@
++#ifndef _MANIPULATING_H_
++#define _MANIPULATING_H_
++
++#include <stdio.h>
++
++#include <string.h>
++
++void manipulating(void);
++#endif
+\ No newline at end of file
+diff --git a/manupilating-testing.txt b/manupilating-testing.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/tokenizing-testing.txt b/tokenizing-testing.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/tokenizing.c b/tokenizing.c
+new file mode 100644
+index 0000000..ebd903b
+--- /dev/null
++++ b/tokenizing.c
+@@ -0,0 +1,16 @@
++#include "tokenizing.h"
++
++void tokenizing() {
++/* Version 1 */
++>> insert here
++
++
++/* Version 2 */
++>> insert here
++
++
++/* Version 3 */
++>> insert here
++
++
++}
+\ No newline at end of file
+diff --git a/tokenizing.h b/tokenizing.h
+new file mode 100644
+index 0000000..09e0c4c
+--- /dev/null
++++ b/tokenizing.h
+@@ -0,0 +1,7 @@
++#ifndef _TOKENIZING_H_
++#define _TOKENIZING_H_
++
++#include <stdio.h> 
++#include <string.h> 
++void tokenizing (void);
++#endif
+\ No newline at end of file
