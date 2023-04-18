@@ -62,10 +62,10 @@ void manipulating() {
 
 /* Version 3 */
     printf("***start of searching strings Demo ***\n");
-// Declare character arrays for strings
+
     char haystack[BUFFER_SIZE];
     char needle[BUFFER_SIZE];
-    char* occurrence = NULL;
+    char* occurrence = NULL; //declaration of a pointer initialized to NULL
 
 // This loop prompts the user to input a string and a substring to search for
 // It terminates when the user enters "q" as the input string
@@ -74,25 +74,18 @@ void manipulating() {
 	    printf("Type the string (q - to quit): \n");
 // This line reads the user input from the console and stores it in the "haystack" array
         fgets(haystack, BUFFER_SIZE, stdin);
-
 // This line removes the trailing newline character from the input string
         haystack[strlen(haystack) - 1] = '\0';
-
 // This line checks if the user entered "q" to quit the program
         if (strcmp(haystack, "q") != 0) {
-
 	// This line prompts the user to input a substring to search for
 	        printf("Type the substring: \n");
-
 	// This line reads the user input from the console and stores it in the "needle" array
 	        fgets(needle, BUFFER_SIZE, stdin);
-
 	// This line removes the trailing newline character from the input substring
 	        needle[strlen(needle) - 1] = '\0';
-
 	// This line finds the first occurrence of the substring in the input string and stores a pointer to it in the "occurrence" variable
 	    occurrence = strstr(haystack, needle);
-
 	// This block checks if the substring was found in the input string
 	        if (occurrence)
 		// This line prints the message indicating the position of the first occurrence of the substring in the input string
@@ -104,7 +97,5 @@ void manipulating() {
     } while (strcmp(string1, "q") != 0);
     // Prints a message to indicate the end of the concatenating strings demo.
     printf("*** End of†Concatenating strings Demo ***\n\n");
-
-
 
 }
