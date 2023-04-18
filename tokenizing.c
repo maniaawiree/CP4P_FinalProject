@@ -17,7 +17,7 @@ void tokenizing() {
             sentenceCounter = 1;
             while (nextSentence) {
                 printf("Sentence #%d is \'%s\'\n", sentenceCounter++, nextSentence);
-                nextSentence - strtok(NULL, ".");
+                nextSentence = strtok(NULL, ".");
             }
         }
     } while (strcmp(sentences, "q") != 0);
